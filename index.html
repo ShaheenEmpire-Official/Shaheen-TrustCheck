@@ -3,25 +3,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
+<meta name="description" content="Shaheen TrustCheck — global website risk intelligence and digital trust analysis.">
 
-<title>Shaheen TrustCheck | Global Digital Trust Platform</title>
-
-<meta name="description" content="Shaheen TrustCheck helps users examine suspicious websites and identify potential online security risks.">
-
-<meta name="robots" content="index, follow">
+<title>Shaheen TrustCheck | Global Threat Intelligence</title>
 
 <style>
 :root {
   --black: #000000;
   --white: #ffffff;
+  --line: 2px solid #000000;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -29,337 +25,452 @@ html {
 }
 
 body {
+  margin: 0;
   background: var(--white);
   color: var(--black);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
 
-button, input {
+button, input, select {
   font: inherit;
 }
 
-button {
+button, select {
   cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 3px;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
-/* HEADER */
-
-header {
-  width: 100%;
-  border-bottom: 2px solid var(--black);
+.topbar {
+  border-bottom: var(--line);
   background: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
-.navbar {
+.nav {
   max-width: 1250px;
   margin: auto;
-  padding: 18px 24px;
+  padding: 17px 22px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
 }
 
-.logo {
-  font-size: 21px;
+.brand {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 19px;
   font-weight: 900;
   letter-spacing: -1px;
 }
 
-.logo span {
-  border: 2px solid var(--black);
-  padding: 3px 7px;
+.brand-mark {
+  display: inline-block;
+  border: var(--line);
+  padding: 2px 7px;
   margin-right: 7px;
 }
 
 .nav-links {
   display: flex;
-  gap: 25px;
   align-items: center;
-  font-size: 14px;
-  font-weight: 700;
+  gap: 22px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
 
-.menu-button {
+.menu-btn {
   display: none;
   background: var(--black);
   color: var(--white);
-  padding: 8px 14px;
-  border: 2px solid var(--black);
+  border: var(--line);
+  padding: 8px 13px;
+  font-weight: 900;
 }
-
-/* HERO */
 
 .hero {
   max-width: 1050px;
+  padding: 75px 22px 45px;
   margin: auto;
-  padding: 90px 24px 65px;
   text-align: center;
 }
 
-.eyebrow {
+.kicker {
   display: inline-block;
-  border: 2px solid var(--black);
-  padding: 7px 15px;
+  border: var(--line);
+  padding: 6px 13px;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 2px;
-  margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-size: clamp(39px, 8vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -4px;
+  font-size: clamp(39px, 8vw, 78px);
   font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -4px;
+  margin: 24px 0;
 }
 
 .hero h1 span {
   display: block;
   text-decoration: underline;
-  text-decoration-thickness: 4px;
   text-underline-offset: 9px;
+  text-decoration-thickness: 4px;
 }
 
-.hero p {
-  max-width: 650px;
-  margin: 27px auto;
-  font-size: 17px;
+.hero-description {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-size: 16px;
 }
 
-/* SEARCH */
-
-.checker {
-  max-width: 800px;
-  margin: 35px auto 0;
+.scanner {
+  max-width: 850px;
+  margin: 30px auto 0;
   border: 3px solid var(--black);
   padding: 9px;
   display: flex;
   gap: 9px;
 }
 
-.checker input {
+.scanner input {
+  width: 100%;
   min-width: 0;
-  flex: 1;
   border: 0;
   outline: 0;
-  padding: 17px;
+  padding: 15px;
+  color: var(--black);
   background: var(--white);
-  color: var(--black);
-  font-size: 15px;
 }
 
-.checker input::placeholder {
+.scanner input::placeholder {
   color: var(--black);
-  opacity: 1;
 }
 
-.primary-button {
+.primary {
   background: var(--black);
   color: var(--white);
-  border: 2px solid var(--black);
-  padding: 15px 25px;
+  border: var(--line);
+  padding: 14px 23px;
   font-weight: 900;
-  transition: .2s;
+  white-space: nowrap;
 }
 
-.primary-button:hover {
+.primary:hover {
   background: var(--white);
   color: var(--black);
 }
 
-.primary-button:disabled {
-  opacity: .5;
-  cursor: not-allowed;
+.primary:disabled {
+  cursor: wait;
 }
 
-.helper {
-  font-size: 12px !important;
-  margin-top: 12px !important;
+.language-row {
+  max-width: 850px;
+  margin: 17px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* RESULTS */
-
-#results {
-  display: none;
-  max-width: 800px;
-  margin: 30px auto;
-  border: 3px solid var(--black);
-  padding: 25px;
-  text-align: left;
-}
-
-.result-heading {
-  font-size: 25px;
+.language-row label {
+  font-size: 12px;
   font-weight: 900;
-  border-bottom: 2px solid var(--black);
-  padding-bottom: 12px;
-  margin-bottom: 20px;
 }
 
-.result-item {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--black);
+.language-row select {
+  border: var(--line);
+  padding: 9px 12px;
+  background: var(--white);
+  color: var(--black);
+  min-width: 190px;
+}
+
+.micro-note {
+  font-size: 12px;
+  max-width: 780px;
+  margin: 14px auto;
+}
+
+.status-line {
+  max-width: 850px;
+  margin: 18px auto;
+  border: var(--line);
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  display: none;
   overflow-wrap: anywhere;
 }
 
-.result-item strong {
+/* REPORT */
+
+.report {
+  display: none;
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 0 18px;
+  text-align: left;
+}
+
+.report-shell {
+  border: 3px solid var(--black);
+}
+
+.report-header {
+  padding: 22px;
+  border-bottom: var(--line);
+}
+
+.report-header h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  letter-spacing: -1px;
+}
+
+.report-meta {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.verdict {
+  border: var(--line);
+  margin-top: 16px;
+  padding: 14px;
+  font-weight: 900;
+}
+
+.report-body {
+  padding: 22px;
+}
+
+.report-section {
+  margin-bottom: 28px;
+}
+
+.report-section h3 {
+  font-size: 18px;
+  margin: 0 0 12px;
+  padding-bottom: 7px;
+  border-bottom: var(--line);
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.report-card {
+  border: var(--line);
+  padding: 13px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.report-card.full {
+  grid-column: 1 / -1;
+}
+
+.report-card strong {
   display: block;
-  margin-bottom: 4px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
-.notice {
-  margin-top: 20px;
-  padding: 15px;
-  border: 2px solid var(--black);
-  font-size: 13px;
+.report-card p {
+  margin: 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-.result-actions {
+.finding {
+  border: var(--line);
+  padding: 14px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.finding strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.finding small {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.finding-label {
+  display: inline-block;
+  border: 1px solid var(--black);
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.report-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.secondary {
+  border: var(--line);
+  color: var(--black);
+  background: var(--white);
+  padding: 11px 16px;
+  font-weight: 900;
+}
+
+.secondary:hover {
+  color: var(--white);
+  background: var(--black);
+}
+
+.disclaimer {
+  border: var(--line);
+  padding: 14px;
+  font-size: 12px;
   margin-top: 20px;
 }
 
-.secondary-button {
-  background: var(--white);
-  color: var(--black);
-  border: 2px solid var(--black);
-  padding: 10px 18px;
-  font-weight: 800;
-}
-
-.secondary-button:hover {
-  background: var(--black);
-  color: var(--white);
-}
-
-/* FEATURES */
+/* GENERAL SECTIONS */
 
 .section {
   max-width: 1150px;
+  padding: 60px 22px;
   margin: auto;
-  padding: 65px 24px;
 }
 
-.section-title {
-  font-size: clamp(30px, 5vw, 46px);
+.section h2 {
+  font-size: clamp(29px, 5vw, 45px);
   font-weight: 900;
+  line-height: 1.1;
   letter-spacing: -2px;
-  margin-bottom: 12px;
 }
 
-.section-description {
-  max-width: 650px;
-  margin-bottom: 35px;
+.section-intro {
+  max-width: 720px;
+  margin-bottom: 30px;
 }
 
-.features {
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .feature {
-  border: 2px solid var(--black);
-  padding: 25px;
-  min-height: 190px;
+  border: var(--line);
+  padding: 22px;
 }
 
 .feature-number {
-  font-size: 12px;
-  font-weight: 900;
   border: 1px solid var(--black);
-  padding: 5px 9px;
   display: inline-block;
-  margin-bottom: 17px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .feature h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
+  margin: 12px 0 7px;
+  font-size: 18px;
 }
 
 .feature p {
-  font-size: 14px;
+  font-size: 13px;
+  margin: 0;
 }
-
-/* PROCESS */
 
 .process {
   background: var(--black);
   color: var(--white);
-  padding: 65px 24px;
 }
 
 .process-inner {
   max-width: 1150px;
+  padding: 55px 22px;
   margin: auto;
 }
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 35px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 25px;
 }
 
 .process-card {
   border: 2px solid var(--white);
-  padding: 25px;
+  padding: 20px;
 }
 
-.process-card h3 {
-  margin: 12px 0;
+.process-card p {
+  font-size: 13px;
 }
-
-/* FOOTER */
 
 footer {
-  border-top: 2px solid var(--black);
-  padding: 35px 24px;
+  border-top: var(--line);
+  padding: 32px 20px;
   text-align: center;
 }
 
 footer p {
-  font-size: 13px;
-  margin-top: 9px;
+  font-size: 12px;
 }
 
-/* ACCESSIBILITY */
+[dir="rtl"] {
+  text-align: right;
+}
 
-button:focus-visible,
-input:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 4px;
+[dir="rtl"] .nav,
+[dir="rtl"] .language-row,
+[dir="rtl"] .scanner,
+[dir="rtl"] .report-actions {
+  direction: rtl;
 }
 
 /* MOBILE */
 
-@media(max-width: 750px) {
+@media(max-width: 760px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
     right: 0;
+    z-index: 10;
+    border-bottom: var(--line);
     background: var(--white);
-    border-bottom: 2px solid var(--black);
     padding: 20px;
     flex-direction: column;
   }
@@ -368,29 +479,38 @@ a:focus-visible {
     display: flex;
   }
 
-  .menu-button {
+  .menu-btn {
     display: block;
   }
 
   .hero {
-    padding-top: 65px;
+    padding-top: 55px;
   }
 
   .hero h1 {
     letter-spacing: -2px;
   }
 
-  .checker {
+  .scanner {
     flex-direction: column;
   }
 
-  .checker input {
+  .scanner input {
     width: 100%;
   }
 
-  .features,
-  .process-grid {
+  .feature-grid,
+  .process-grid,
+  .report-grid {
     grid-template-columns: 1fr;
+  }
+
+  .report-card.full {
+    grid-column: auto;
+  }
+
+  .primary {
+    width: 100%;
   }
 }
 
@@ -398,37 +518,30 @@ a:focus-visible {
   html {
     scroll-behavior: auto;
   }
-
-  * {
-    transition: none !important;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <nav class="navbar">
-
-    <a href="#" class="logo">
-      <span>ST</span> SHAAHEEN
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">ST</span>
+      SHAAHEEN TRUSTCHECK
     </a>
 
     <div class="nav-links" id="navLinks">
-      <a href="#home">HOME</a>
-      <a href="#features">FEATURES</a>
-      <a href="#how">HOW IT WORKS</a>
-      <a href="#about">ABOUT</a>
+      <a href="#home" data-i18n="navHome">HOME</a>
+      <a href="#features" data-i18n="navFeatures">FEATURES</a>
+      <a href="#how" data-i18n="navHow">HOW IT WORKS</a>
+      <a href="#about" data-i18n="navAbout">ABOUT</a>
     </div>
 
-    <button class="menu-button"
-      id="menuButton"
-      aria-expanded="false"
-      aria-controls="navLinks">
+    <button class="menu-btn" id="menuBtn" type="button"
+      aria-expanded="false" aria-controls="navLinks">
       MENU
     </button>
-
   </nav>
 </header>
 
@@ -436,563 +549,1015 @@ a:focus-visible {
 
 <section class="hero" id="home">
 
-  <div class="eyebrow">
-    GLOBAL DIGITAL TRUST PLATFORM
+  <div class="kicker" data-i18n="kicker">
+    GLOBAL WEBSITE THREAT INTELLIGENCE
   </div>
 
   <h1>
-    SHAHEEN
+    SHAAHEEN
     <span>TRUSTCHECK</span>
   </h1>
 
-  <p>
-    Check before you click, buy, download or trust.
-    Examine suspicious website addresses and discover
-    potential digital security warning signs.
+  <p class="hero-description" data-i18n="intro">
+    Investigate website addresses, examine security signals
+    and understand the evidence before you trust a website.
   </p>
 
-  <form class="checker" id="checkerForm">
-
+  <form class="scanner" id="scanForm">
     <input
+      id="urlInput"
       type="text"
-      id="websiteInput"
+      maxlength="2048"
+      autocomplete="url"
+      spellcheck="false"
+      required
       placeholder="Enter a website URL..."
       aria-label="Website URL"
-      maxlength="2048"
-      required
     >
 
-    <button class="primary-button"
-      id="checkButton"
-      type="submit">
-      CHECK WEBSITE →
+    <button class="primary" id="scanButton" type="submit"
+      data-i18n="scanButton">
+      ANALYZE WEBSITE
     </button>
-
   </form>
 
-  <p class="helper">
-    Free preliminary URL analysis. No absolute safety guarantees.
-  </p>
+  <div class="language-row">
+    <label for="languageSelect" data-i18n="languageLabel">
+      REPORT LANGUAGE
+    </label>
 
-  <div id="results" aria-live="polite">
-
-    <div class="result-heading">
-      WEBSITE ANALYSIS REPORT
-    </div>
-
-    <div id="reportContent"></div>
-
-    <div class="notice">
-      IMPORTANT: This report checks URL structure and
-      common warning signs locally. It does not query
-      live threat databases or verify the website's owner.
-      A website without detected warning signs is not
-      necessarily safe.
-    </div>
-
-    <div class="result-actions">
-
-      <button class="secondary-button"
-        id="copyButton" type="button">
-        COPY REPORT
-      </button>
-
-      <button class="secondary-button"
-        id="clearButton" type="button">
-        CLEAR
-      </button>
-
-    </div>
-
+    <select id="languageSelect">
+      <option value="en">English — Default</option>
+      <option value="ur">اردو — Urdu</option>
+      <option value="hi">हिन्दी — Hindi</option>
+      <option value="ar">العربية — Arabic</option>
+      <option value="bn">বাংলা — Bengali</option>
+      <option value="zh-CN">中文（简体）— Chinese Simplified</option>
+      <option value="zh-TW">中文（繁體）— Chinese Traditional</option>
+      <option value="es">Español — Spanish</option>
+      <option value="fr">Français — French</option>
+      <option value="de">Deutsch — German</option>
+      <option value="pt">Português — Portuguese</option>
+      <option value="ru">Русский — Russian</option>
+      <option value="ja">日本語 — Japanese</option>
+      <option value="ko">한국어 — Korean</option>
+      <option value="id">Bahasa Indonesia</option>
+      <option value="tr">Türkçe — Turkish</option>
+      <option value="fa">فارسی — Persian</option>
+      <option value="pa">ਪੰਜਾਬੀ — Punjabi</option>
+      <option value="ta">தமிழ் — Tamil</option>
+      <option value="te">తెలుగు — Telugu</option>
+      <option value="mr">मराठी — Marathi</option>
+      <option value="sw">Kiswahili — Swahili</option>
+      <option value="ms">Bahasa Melayu — Malay</option>
+      <option value="vi">Tiếng Việt — Vietnamese</option>
+      <option value="it">Italiano — Italian</option>
+      <option value="nl">Nederlands — Dutch</option>
+      <option value="th">ไทย — Thai</option>
+      <option value="fil">Filipino</option>
+      <option value="ha">Hausa</option>
+      <option value="yo">Yorùbá — Yoruba</option>
+      <option value="am">አማርኛ — Amharic</option>
+    </select>
   </div>
 
+  <p class="micro-note" data-i18n="languageNote">
+    English is the default. The selected language is sent to
+    the analysis service for report localization.
+  </p>
+
+  <div class="status-line" id="statusLine" role="status"
+    aria-live="polite"></div>
+
+</section>
+
+<section class="report" id="report" aria-live="polite">
+  <div class="report-shell">
+
+    <div class="report-header">
+      <h2 data-i18n="reportTitle">WEBSITE INTELLIGENCE REPORT</h2>
+
+      <div class="report-meta" id="reportMeta"></div>
+
+      <div class="verdict" id="verdict"></div>
+    </div>
+
+    <div class="report-body">
+
+      <section class="report-section">
+        <h3 data-i18n="overviewTitle">EXECUTIVE SUMMARY</h3>
+        <div class="report-grid" id="overviewGrid"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 data-i18n="checksTitle">SECURITY CHECKS</h3>
+        <div id="checksList"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 data-i18n="findingsTitle">FINDINGS & EVIDENCE</h3>
+        <div id="findingsList"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 data-i18n="domainTitle">DOMAIN INFORMATION</h3>
+        <div class="report-grid" id="domainGrid"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 data-i18n="connectionTitle">CONNECTION & TLS</h3>
+        <div class="report-grid" id="connectionGrid"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 data-i18n="redirectTitle">REDIRECTS & TECHNOLOGIES</h3>
+        <div class="report-grid" id="redirectGrid"></div>
+      </section>
+
+      <div class="report-actions">
+        <button class="secondary" id="copyReport" type="button"
+          data-i18n="copyButton">COPY REPORT</button>
+
+        <button class="secondary" id="downloadReport" type="button"
+          data-i18n="downloadButton">DOWNLOAD JSON</button>
+
+        <button class="secondary" id="newScan" type="button"
+          data-i18n="newButton">NEW ANALYSIS</button>
+      </div>
+
+      <div class="disclaimer" data-i18n="disclaimer">
+        Security analysis is evidence-based and cannot guarantee
+        that a website is safe. Missing threat records do not prove
+        that a website is harmless. Some checks may be unavailable.
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="section" id="features">
 
-  <h2 class="section-title">
-    ONE PLATFORM. GLOBAL TRUST.
-  </h2>
+  <h2 data-i18n="featuresTitle">A DEEPER VIEW OF DIGITAL TRUST</h2>
 
-  <p class="section-description">
-    Our mission is to make digital security information
-    easier to understand and accessible worldwide.
+  <p class="section-intro" data-i18n="featuresIntro">
+    A transparent approach to website intelligence.
+    Findings should be supported by evidence and source information.
   </p>
 
-  <div class="features">
+  <div class="feature-grid">
 
     <article class="feature">
       <span class="feature-number">01</span>
-      <h3>Website Analysis</h3>
-      <p>
-        Examine website addresses and identify
-        common suspicious URL patterns.
-      </p>
+      <h3>Threat Reputation</h3>
+      <p>Threat intelligence checks through authorized provider APIs.</p>
     </article>
 
     <article class="feature">
       <span class="feature-number">02</span>
-      <h3>Online Shop Verification</h3>
-      <p>
-        Future integration for examining public
-        business information and store reputation.
-      </p>
+      <h3>Domain Intelligence</h3>
+      <p>Domain registration details, nameservers and DNS information.</p>
     </article>
 
     <article class="feature">
       <span class="feature-number">03</span>
-      <h3>AI Security Analysis</h3>
-      <p>
-        Planned AI-powered examination of
-        suspicious digital content.
-      </p>
+      <h3>TLS & Connection</h3>
+      <p>Certificate details, connection signals and available HTTP metadata.</p>
     </article>
 
     <article class="feature">
       <span class="feature-number">04</span>
-      <h3>Message Analysis</h3>
-      <p>
-        Planned examination of suspicious emails,
-        SMS and online messages.
-      </p>
+      <h3>Redirect Analysis</h3>
+      <p>Examination of redirect chains and destination changes.</p>
     </article>
 
     <article class="feature">
       <span class="feature-number">05</span>
-      <h3>Global Protection</h3>
-      <p>
-        A platform designed for users across
-        countries and languages.
-      </p>
+      <h3>Evidence Reports</h3>
+      <p>Clear findings with timestamps, source names and limitations.</p>
     </article>
 
     <article class="feature">
       <span class="feature-number">06</span>
-      <h3>Evidence-Based Reports</h3>
-      <p>
-        Our goal is to present clear findings,
-        sources and limitations.
-      </p>
+      <h3>Multilingual Reports</h3>
+      <p>Language selection for a more accessible global experience.</p>
     </article>
 
   </div>
-
 </section>
 
 <section class="process" id="how">
-
   <div class="process-inner">
 
-    <h2 class="section-title">
-      HOW IT WORKS
-    </h2>
-
-    <p>
-      A simple starting point for examining suspicious URLs.
-    </p>
+    <h2 data-i18n="howTitle">HOW THE ANALYSIS WORKS</h2>
 
     <div class="process-grid">
 
       <article class="process-card">
-        <h3>01. ENTER</h3>
-        <p>
-          Enter the website address you want to examine.
-        </p>
+        <h3>01. SUBMIT</h3>
+        <p>Enter a website address and select your report language.</p>
       </article>
 
       <article class="process-card">
-        <h3>02. ANALYZE</h3>
-        <p>
-          The current version examines URL structure
-          and common warning signs.
-        </p>
+        <h3>02. INVESTIGATE</h3>
+        <p>Available threat intelligence and technical checks are requested.</p>
       </article>
 
       <article class="process-card">
-        <h3>03. REVIEW</h3>
-        <p>
-          Read the findings and understand the
-          limitations before trusting the website.
-        </p>
+        <h3>03. UNDERSTAND</h3>
+        <p>Review the evidence, sources, timestamps and limitations.</p>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 <section class="section" id="about">
-
-  <h2 class="section-title">
-    OUR MISSION
-  </h2>
-
-  <p>
-    Shaheen TrustCheck aims to build a reliable,
-    privacy-conscious and multilingual global
-    digital trust platform.
-
-    We believe security decisions should be
-    supported by evidence, transparent reporting
-    and responsible technology.
+  <h2 data-i18n="missionTitle">OUR MISSION</h2>
+  <p data-i18n="missionText">
+    Shaheen TrustCheck aims to make online trust information
+    understandable, transparent and accessible worldwide.
+    We do not promise perfect detection. We aim to provide
+    useful evidence and clearly communicate uncertainty.
   </p>
-
 </section>
 
 </main>
 
 <footer>
-
-  <h3>SHAHEEN TRUSTCHECK</h3>
-
-  <p>
-    Global AI-Powered Trust & Digital Security Platform
-  </p>
-
-  <p>
-    © <span id="year"></span> Shaheen TrustCheck.
-    All Rights Reserved.
-  </p>
-
-  <p>
-    Security indicators are not guarantees of safety.
-  </p>
-
+  <strong>SHAAHEEN TRUSTCHECK</strong>
+  <p>Global Website Threat Intelligence</p>
+  <p>© <span id="year"></span> Shaheen TrustCheck</p>
 </footer>
 
 <script>
+"use strict";
 
-/* MOBILE MENU */
+/*
+  BACKEND CONTRACT
 
-const menuButton = document.getElementById("menuButton");
-const navLinks = document.getElementById("navLinks");
+  This page sends:
+  POST /api/scan
 
-menuButton.addEventListener("click", () => {
+  {
+    "url": "https://example.com",
+    "language": "en"
+  }
 
-  const opened = navLinks.classList.toggle("open");
+  The backend must keep all provider API keys secret.
 
-  menuButton.setAttribute("aria-expanded", String(opened));
+  Expected response:
+  {
+    "ok": true,
+    "reportId": "report-123",
+    "checkedAt": "2026-11-09T10:00:00Z",
+    "language": "en",
+    "verdict": "suspicious",
+    "summary": "Explanation of the result",
+    "target": {
+      "input": "https://example.com",
+      "canonicalUrl": "https://example.com/",
+      "hostname": "example.com"
+    },
+    "checks": [
+      {
+        "name": "Google Web Risk",
+        "status": "clear",
+        "detail": "No matching threat record returned.",
+        "source": "Google Web Risk",
+        "checkedAt": "2026-11-09T10:00:00Z"
+      }
+    ],
+    "findings": [
+      {
+        "severity": "medium",
+        "title": "Example finding",
+        "detail": "Explanation",
+        "evidence": "Observed evidence",
+        "source": "Provider or local rule",
+        "checkedAt": "2026-11-09T10:00:00Z"
+      }
+    ],
+    "website": {
+      "registrar": "Example Registrar",
+      "registeredAt": "2020-01-01",
+      "expiresAt": "2027-01-01",
+      "country": "Unknown",
+      "ipAddresses": [],
+      "nameservers": [],
+      "dnsRecords": [],
+      "tls": {
+        "version": "TLS 1.3",
+        "issuer": "Example CA",
+        "validTo": "2027-01-01",
+        "status": "valid"
+      },
+      "http": {
+        "status": 200,
+        "finalUrl": "https://example.com/",
+        "server": "Unknown"
+      },
+      "redirects": [],
+      "technologies": []
+    }
+  }
 
-});
+  The backend may omit unavailable fields.
+  Missing data must be displayed as unavailable,
+  never guessed.
+*/
 
-navLinks.querySelectorAll("a").forEach(link => {
+const API_ENDPOINT = "/api/scan";
 
-  link.addEventListener("click", () => {
+const I18N = {
+  en: {
+    navHome: "HOME",
+    navFeatures: "FEATURES",
+    navHow: "HOW IT WORKS",
+    navAbout: "ABOUT",
+    kicker: "GLOBAL WEBSITE THREAT INTELLIGENCE",
+    intro: "Investigate website addresses, examine security signals and understand the evidence before you trust a website.",
+    scanButton: "ANALYZE WEBSITE",
+    languageLabel: "REPORT LANGUAGE",
+    languageNote: "English is the default. The selected language is sent to the analysis service for report localization.",
+    reportTitle: "WEBSITE INTELLIGENCE REPORT",
+    overviewTitle: "EXECUTIVE SUMMARY",
+    checksTitle: "SECURITY CHECKS",
+    findingsTitle: "FINDINGS & EVIDENCE",
+    domainTitle: "DOMAIN INFORMATION",
+    connectionTitle: "CONNECTION & TLS",
+    redirectTitle: "REDIRECTS & TECHNOLOGIES",
+    copyButton: "COPY REPORT",
+    downloadButton: "DOWNLOAD JSON",
+    newButton: "NEW ANALYSIS",
+    disclaimer: "Security analysis is evidence-based and cannot guarantee that a website is safe. Missing threat records do not prove that a website is harmless. Some checks may be unavailable.",
+    featuresTitle: "A DEEPER VIEW OF DIGITAL TRUST",
+    featuresIntro: "A transparent approach to website intelligence. Findings should be supported by evidence and source information.",
+    howTitle: "HOW THE ANALYSIS WORKS",
+    missionTitle: "OUR MISSION",
+    missionText: "Shaheen TrustCheck aims to make online trust information understandable, transparent and accessible worldwide. We do not promise perfect detection. We aim to provide useful evidence and clearly communicate uncertainty."
+  },
+  hi: {
+    navHome: "होम",
+    navFeatures: "सुविधाएँ",
+    navHow: "कैसे काम करता है",
+    navAbout: "हमारे बारे में",
+    kicker: "वैश्विक वेबसाइट खतरा जानकारी",
+    intro: "वेबसाइट पते की जाँच करें, सुरक्षा संकेतों को समझें और भरोसा करने से पहले उपलब्ध प्रमाण देखें।",
+    scanButton: "वेबसाइट जाँचें",
+    languageLabel: "रिपोर्ट की भाषा",
+    languageNote: "डिफॉल्ट अंग्रेज़ी है। चुनी गई भाषा रिपोर्ट के लिए विश्लेषण सेवा को भेजी जाएगी।",
+    reportTitle: "वेबसाइट सुरक्षा रिपोर्ट",
+    overviewTitle: "सारांश",
+    checksTitle: "सुरक्षा जाँच",
+    findingsTitle: "नतीजे और प्रमाण",
+    domainTitle: "डोमेन जानकारी",
+    connectionTitle: "कनेक्शन और TLS",
+    redirectTitle: "रीडायरेक्ट और टेक्नोलॉजी",
+    copyButton: "रिपोर्ट कॉपी करें",
+    downloadButton: "JSON डाउनलोड करें",
+    newButton: "नई जाँच",
+    disclaimer: "सुरक्षा विश्लेषण पूर्ण सुरक्षा की गारंटी नहीं देता। किसी खतरे का रिकॉर्ड न मिलना यह साबित नहीं करता कि वेबसाइट सुरक्षित है। कुछ जाँच उपलब्ध नहीं हो सकतीं।",
+    featuresTitle: "डिजिटल भरोसे की गहरी जाँच",
+    featuresIntro: "वेबसाइट की जानकारी को पारदर्शी तरीके से दिखाना हमारा लक्ष्य है।",
+    howTitle: "जाँच कैसे काम करती है",
+    missionTitle: "हमारा मिशन",
+    missionText: "Shaheen TrustCheck का उद्देश्य ऑनलाइन भरोसे की जानकारी को समझने योग्य और दुनिया भर में उपलब्ध बनाना है। हम पूर्ण पहचान की गारंटी नहीं देते; हम प्रमाण और सीमाएँ स्पष्ट करते हैं।"
+  },
+  ur: {
+    navHome: "ہوم",
+    navFeatures: "خصوصیات",
+    navHow: "طریقۂ کار",
+    navAbout: "ہمارے بارے میں",
+    kicker: "عالمی ویب سائٹ خطرات کی معلومات",
+    intro: "ویب سائٹ کا پتہ جانچیں، حفاظتی اشارے سمجھیں اور اعتماد کرنے سے پہلے شواہد دیکھیں۔",
+    scanButton: "ویب سائٹ چیک کریں",
+    languageLabel: "رپورٹ کی زبان",
+    languageNote: "ڈیفالٹ انگریزی ہے۔ منتخب زبان رپورٹ کے لیے تجزیاتی سروس کو بھیجی جائے گی۔",
+    reportTitle: "ویب سائٹ سکیورٹی رپورٹ",
+    overviewTitle: "خلاصہ",
+    checksTitle: "سکیورٹی چیکس",
+    findingsTitle: "نتائج اور شواہد",
+    domainTitle: "ڈومین کی معلومات",
+    connectionTitle: "کنکشن اور TLS",
+    redirectTitle: "ری ڈائریکٹس اور ٹیکنالوجیز",
+    copyButton: "رپورٹ کاپی کریں",
+    downloadButton: "JSON ڈاؤن لوڈ کریں",
+    newButton: "نیا تجزیہ",
+    disclaimer: "سکیورٹی تجزیہ مکمل حفاظت کی ضمانت نہیں دیتا۔ کسی خطرے کا ریکارڈ نہ ملنا ویب سائٹ کے محفوظ ہونے کا ثبوت نہیں۔ کچھ چیکس دستیاب نہیں ہو سکتے۔",
+    featuresTitle: "ڈیجیٹل اعتماد کی گہری جانچ",
+    featuresIntro: "ویب سائٹ کی معلومات کو شفاف انداز میں پیش کرنا ہمارا مقصد ہے۔",
+    howTitle: "تجزیہ کیسے کام کرتا ہے",
+    missionTitle: "ہمارا مشن",
+    missionText: "Shaheen TrustCheck کا مقصد آن لائن اعتماد کی معلومات کو قابلِ فہم اور دنیا بھر میں قابلِ رسائی بنانا ہے۔ ہم مکمل شناخت کی ضمانت نہیں دیتے بلکہ شواہد اور حدود واضح کرتے ہیں۔"
+  },
+  ar: {
+    navHome: "الرئيسية",
+    navFeatures: "الميزات",
+    navHow: "كيف يعمل",
+    navAbout: "حول",
+    kicker: "معلومات عالمية عن تهديدات المواقع",
+    intro: "افحص عناوين المواقع وافهم مؤشرات الأمان والأدلة قبل الوثوق بموقع إلكتروني.",
+    scanButton: "تحليل الموقع",
+    languageLabel: "لغة التقرير",
+    languageNote: "اللغة الافتراضية هي الإنجليزية. تُرسل اللغة المختارة إلى خدمة التحليل لترجمة التقرير.",
+    reportTitle: "تقرير معلومات الموقع",
+    overviewTitle: "الملخص",
+    checksTitle: "فحوصات الأمان",
+    findingsTitle: "النتائج والأدلة",
+    domainTitle: "معلومات النطاق",
+    connectionTitle: "الاتصال و TLS",
+    redirectTitle: "عمليات إعادة التوجيه والتقنيات",
+    copyButton: "نسخ التقرير",
+    downloadButton: "تنزيل JSON",
+    newButton: "تحليل جديد",
+    disclaimer: "لا يضمن التحليل الأمني سلامة الموقع بشكل كامل. عدم وجود سجل تهديد لا يثبت أن الموقع آمن. قد لا تتوفر بعض الفحوصات.",
+    featuresTitle: "رؤية أعمق للثقة الرقمية",
+    featuresIntro: "نهج شفاف لمعلومات المواقع، مع أدلة ومصادر واضحة.",
+    howTitle: "كيف يعمل التحليل",
+    missionTitle: "مهمتنا",
+    missionText: "يهدف Shaheen TrustCheck إلى جعل معلومات الثقة عبر الإنترنت مفهومة ومتاحة عالمياً. لا نعد باكتشاف مثالي، بل نوضح الأدلة وحدود التحليل."
+  }
+};
 
-    navLinks.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+const TEXT = {
+  noData: "Not available",
+  unknown: "Unknown",
+  localOnly: "LOCAL-ONLY ANALYSIS",
+  remote: "ONLINE ANALYSIS",
+  malicious: "THREAT INDICATORS FOUND",
+  suspicious: "SUSPICIOUS INDICATORS",
+  clear: "NO MATCHING THREAT RECORD RETURNED",
+  unknownVerdict: "INCONCLUSIVE — MORE VERIFICATION NEEDED",
+  invalid: "Please enter a valid HTTP or HTTPS website URL.",
+  apiUnavailable: "Online analysis service is not connected. Showing limited local URL analysis only.",
+  apiError: "Online analysis could not be completed. Showing limited local URL analysis only.",
+  loading: "Analyzing the submitted address...",
+  copied: "Report copied.",
+  copyFailed: "Copy was not available in this browser.",
+  noFindings: "No local warning patterns were detected. This is not proof of safety.",
+  sourceUnavailable: "Source information was not provided.",
+  checksUnavailable: "No online security checks were returned.",
+  detailsUnavailable: "Technical details were not returned by the analysis service.",
+  runAgain: "Select a language and run the analysis again to request the report in that language."
+};
 
-  });
+const form = document.getElementById("scanForm");
+const urlInput = document.getElementById("urlInput");
+const scanButton = document.getElementById("scanButton");
+const statusLine = document.getElementById("statusLine");
+const reportElement = document.getElementById("report");
+const languageSelect = document.getElementById("languageSelect");
 
-});
-
-/* YEAR */
+let latestReport = null;
+let latestReportText = "";
+let lastLanguage = "en";
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-/* URL ANALYSIS */
+function applyLanguage(language) {
+  const dictionary = I18N[language] || I18N.en;
 
-const form = document.getElementById("checkerForm");
-const input = document.getElementById("websiteInput");
-const results = document.getElementById("results");
-const reportContent = document.getElementById("reportContent");
-const checkButton = document.getElementById("checkButton");
+  document.documentElement.lang = language;
+  document.documentElement.dir =
+    ["ur", "ar", "fa"].includes(language) ? "rtl" : "ltr";
 
-let lastReport = "";
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (dictionary[key]) {
+      element.textContent = dictionary[key];
+    }
+  });
+}
 
-const suspiciousWords = [
-  "login-verify",
-  "account-verify",
-  "free-gift",
-  "claim-prize",
-  "password-reset",
-  "wallet-connect",
-  "urgent-payment",
-  "secure-update"
-];
+languageSelect.addEventListener("change", () => {
+  applyLanguage(languageSelect.value);
 
-const shorteners = [
-  "bit.ly",
-  "tinyurl.com",
-  "t.co",
-  "is.gd",
-  "cutt.ly",
-  "rb.gy"
-];
+  if (latestReport) {
+    showStatus(TEXT.runAgain);
+  }
+});
 
-function analyzeURL(raw) {
+applyLanguage("en");
 
+document.getElementById("menuBtn").addEventListener("click", () => {
+  const links = document.getElementById("navLinks");
+  const open = links.classList.toggle("open");
+
+  document.getElementById("menuBtn")
+    .setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("open");
+    document.getElementById("menuBtn")
+      .setAttribute("aria-expanded", "false");
+  });
+});
+
+function showStatus(message) {
+  statusLine.textContent = message;
+  statusLine.style.display = "block";
+}
+
+function normalizeInput(raw) {
+  let value = raw.trim();
+
+  if (!value) {
+    throw new Error(TEXT.invalid);
+  }
+
+  if (!/^https?:\/\//i.test(value)) {
+    value = "https://" + value;
+  }
+
+  const parsed = new URL(value);
+
+  if (!["http:", "https:"].includes(parsed.protocol)) {
+    throw new Error(TEXT.invalid);
+  }
+
+  if (!parsed.hostname || parsed.username || parsed.password) {
+    throw new Error(TEXT.invalid);
+  }
+
+  return parsed;
+}
+
+function localInspection(url) {
   const findings = [];
+  const host = url.hostname.toLowerCase();
+  const full = url.href.toLowerCase();
 
-  let parsed;
+  const shorteners = [
+    "bit.ly", "tinyurl.com", "t.co",
+    "is.gd", "cutt.ly", "rb.gy", "ow.ly"
+  ];
 
-  try {
+  const suspiciousTerms = [
+    "account-verify",
+    "login-verify",
+    "claim-prize",
+    "free-gift",
+    "urgent-payment",
+    "password-reset",
+    "wallet-connect",
+    "secure-update",
+    "confirm-account"
+  ];
 
-    let value = raw.trim();
-
-    if (!/^https?:\/\//i.test(value)) {
-      value = "https://" + value;
-    }
-
-    parsed = new URL(value);
-
-    if (
-      parsed.protocol !== "http:" &&
-      parsed.protocol !== "https:"
-    ) {
-      throw new Error("Unsupported protocol");
-    }
-
-  } catch {
-
-    return {
-      valid: false,
-      findings: ["The supplied address is not a valid HTTP or HTTPS URL."]
-    };
-
+  if (url.protocol === "http:") {
+    findings.push({
+      severity: "medium",
+      title: "Unencrypted HTTP address",
+      detail: "The URL uses HTTP, not HTTPS. Data sent to the website may not receive transport encryption.",
+      evidence: url.protocol,
+      source: "Local URL inspection"
+    });
   }
 
-  const hostname = parsed.hostname.toLowerCase();
-  const fullURL = parsed.href.toLowerCase();
-
-  if (!hostname.includes(".")) {
-    findings.push(
-      "The hostname does not appear to be a normal public domain."
-    );
+  if (url.username || url.password) {
+    findings.push({
+      severity: "high",
+      title: "Embedded URL credentials",
+      detail: "The address contains a username or password section. Verify the URL carefully.",
+      evidence: "Username/password component present",
+      source: "Local URL inspection"
+    });
   }
 
-  if (parsed.protocol === "http:") {
-    findings.push(
-      "This address uses HTTP rather than encrypted HTTPS."
-    );
+  if (host.startsWith("xn--") || host.includes(".xn--")) {
+    findings.push({
+      severity: "medium",
+      title: "Internationalized domain encoding",
+      detail: "The domain contains Punycode. Check for lookalike characters and unexpected spelling.",
+      evidence: host,
+      source: "Local URL inspection"
+    });
   }
 
-  if (parsed.username || parsed.password) {
-    findings.push(
-      "The URL contains embedded username or password information."
-    );
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) {
+    findings.push({
+      severity: "medium",
+      title: "IP address used as hostname",
+      detail: "The address uses an IPv4 literal instead of a conventional domain name.",
+      evidence: host,
+      source: "Local URL inspection"
+    });
   }
 
-  if (hostname.startsWith("xn--") || hostname.includes(".xn--")) {
-    findings.push(
-      "The domain uses internationalized encoding. Verify the spelling carefully."
-    );
+  if (shorteners.includes(host)) {
+    findings.push({
+      severity: "info",
+      title: "URL shortener detected",
+      detail: "The final destination is hidden behind a shortening service. The destination was not followed or verified.",
+      evidence: host,
+      source: "Local URL inspection"
+    });
   }
 
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(hostname)) {
-    findings.push(
-      "The address uses an IP address instead of a conventional domain name."
-    );
+  if (host.split(".").length > 4) {
+    findings.push({
+      severity: "low",
+      title: "Many subdomain levels",
+      detail: "The hostname contains several subdomain levels. Confirm which registered domain is authoritative.",
+      evidence: host,
+      source: "Local URL inspection"
+    });
   }
 
-  if (shorteners.includes(hostname)) {
-    findings.push(
-      "This is a known URL shortening domain. The final destination has not been checked."
-    );
+  if (full.length > 180) {
+    findings.push({
+      severity: "low",
+      title: "Unusually long URL",
+      detail: "The URL is long. Review its parameters and destination carefully.",
+      evidence: "URL length: " + full.length,
+      source: "Local URL inspection"
+    });
   }
 
-  if (hostname.split(".").length > 4) {
-    findings.push(
-      "The address has multiple subdomain levels. Check the actual registered domain."
-    );
+  const matched = suspiciousTerms.filter(term => full.includes(term));
+
+  if (matched.length) {
+    findings.push({
+      severity: "medium",
+      title: "Potentially suspicious URL wording",
+      detail: "Some URL terms are commonly used in deceptive links. This is a heuristic, not proof of maliciousness.",
+      evidence: matched.join(", "),
+      source: "Local URL inspection"
+    });
   }
 
-  if (fullURL.length > 180) {
-    findings.push(
-      "The URL is unusually long. Review its destination and parameters."
-    );
-  }
-
-  if (/%[0-9a-f]{2}/i.test(parsed.pathname)) {
-    findings.push(
-      "The URL contains encoded characters. Review the destination carefully."
-    );
-  }
-
-  const matchedWords = suspiciousWords.filter(word =>
-    fullURL.includes(word)
-  );
-
-  if (matchedWords.length > 0) {
-    findings.push(
-      "Potentially suspicious terms found: " +
-      matchedWords.join(", ")
-    );
-  }
-
-  if (findings.length === 0) {
-    findings.push(
-      "No warning patterns from this limited local rule set were detected."
-    );
+  if (!findings.length) {
+    findings.push({
+      severity: "info",
+      title: "No local warning patterns detected",
+      detail: "The limited local rules did not identify any of their configured warning patterns. Online reputation checks were not performed.",
+      evidence: "No match in the local rule set",
+      source: "Local URL inspection"
+    });
   }
 
   return {
-    valid: true,
-    hostname,
-    protocol: parsed.protocol,
+    ok: false,
+    mode: "local-only",
+    checkedAt: new Date().toISOString(),
+    language: languageSelect.value,
+    verdict: "unknown",
+    summary: "Only local URL structure checks were completed. No online threat intelligence or full website inspection was performed.",
+    target: {
+      input: url.href,
+      canonicalUrl: url.href,
+      hostname: host
+    },
+    checks: [
+      {
+        name: "Local URL inspection",
+        status: "complete",
+        detail: "Basic address structure checks completed."
+      },
+      {
+        name: "Google Web Risk",
+        status: "unavailable",
+        detail: "Online provider connection is not configured."
+      },
+      {
+        name: "Domain registration",
+        status: "unavailable",
+        detail: "No RDAP lookup was performed."
+      },
+      {
+        name: "DNS and TLS",
+        status: "unavailable",
+        detail: "No server-side DNS or certificate checks were performed."
+      },
+      {
+        name: "Redirect analysis",
+        status: "unavailable",
+        detail: "No redirect chain was retrieved."
+      }
+    ],
     findings
   };
-
 }
 
-/* DISPLAY REPORT */
+function safeText(value, fallback = TEXT.noData) {
+  if (value === undefined || value === null || value === "") {
+    return fallback;
+  }
 
-function addReportItem(label, value) {
+  if (typeof value === "object") {
+    return JSON.stringify(value, null, 2);
+  }
 
-  const item = document.createElement("div");
-  item.className = "result-item";
-
-  const strong = document.createElement("strong");
-  strong.textContent = label;
-
-  const content = document.createElement("div");
-  content.textContent = value;
-
-  item.append(strong, content);
-
-  reportContent.appendChild(item);
-
+  return String(value);
 }
 
-form.addEventListener("submit", event => {
+function makeCard(label, value, full = false) {
+  const card = document.createElement("div");
+  card.className = "report-card" + (full ? " full" : "");
 
-  event.preventDefault();
+  const title = document.createElement("strong");
+  title.textContent = label;
 
-  const raw = input.value.trim();
+  const content = document.createElement("p");
+  content.textContent = safeText(value);
 
-  if (!raw) {
-    input.focus();
+  card.append(title, content);
+  return card;
+}
+
+function renderGrid(elementId, entries) {
+  const grid = document.getElementById(elementId);
+  grid.replaceChildren();
+
+  if (!entries.length) {
+    grid.appendChild(makeCard("INFORMATION", TEXT.detailsUnavailable, true));
     return;
   }
 
-  checkButton.disabled = true;
-  checkButton.textContent = "ANALYZING...";
+  entries.forEach(([label, value]) => {
+    grid.appendChild(makeCard(label, value));
+  });
+}
+
+function formatDate(value, language) {
+  if (!value) return TEXT.noData;
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return safeText(value);
 
   try {
+    return new Intl.DateTimeFormat(language, {
+      dateStyle: "medium",
+      timeStyle: "medium"
+    }).format(date);
+  } catch {
+    return date.toISOString();
+  }
+}
 
-    const report = analyzeURL(raw);
+function renderReport(data) {
+  latestReport = data;
 
-    reportContent.replaceChildren();
+  const language = data.language || languageSelect.value || "en";
+  const target = data.target || {};
+  const website = data.website || {};
+  const checks = Array.isArray(data.checks) ? data.checks : [];
+  const findings = Array.isArray(data.findings) ? data.findings : [];
 
-    addReportItem(
-      "INPUT",
-      raw
-    );
+  const verdictLabels = {
+    malicious: TEXT.malicious,
+    suspicious: TEXT.suspicious,
+    no_known_threat: TEXT.clear,
+    clear: TEXT.clear,
+    unknown: TEXT.unknownVerdict
+  };
 
-    if (!report.valid) {
+  document.getElementById("reportMeta").textContent =
+    "REPORT ID: " + safeText(data.reportId, "Not supplied") +
+    " | CHECKED: " + formatDate(data.checkedAt || new Date(), language) +
+    " | LANGUAGE: " + language;
 
-      addReportItem(
-        "VALIDATION",
-        "Invalid URL"
-      );
+  document.getElementById("verdict").textContent =
+    verdictLabels[data.verdict] || TEXT.unknownVerdict;
 
-      report.findings.forEach(message => {
-        addReportItem("FINDING", message);
-      });
+  const overview = [
+    ["Submitted URL", target.input || target.canonicalUrl || "Not supplied"],
+    ["Domain", target.hostname || "Not supplied"],
+    ["Analysis type", data.mode === "local-only" ? TEXT.localOnly : TEXT.remote],
+    ["Summary", data.summary || TEXT.detailsUnavailable]
+  ];
 
-    } else {
+  renderGrid("overviewGrid", overview);
 
-      addReportItem(
-        "DOMAIN",
-        report.hostname
-      );
+  const checksList = document.getElementById("checksList");
+  checksList.replaceChildren();
 
-      addReportItem(
-        "PROTOCOL",
-        report.protocol
-      );
+  if (!checks.length) {
+    checksList.appendChild(makeCard("CHECKS", TEXT.checksUnavailable, true));
+  }
 
-      addReportItem(
-        "ANALYSIS TYPE",
-        "Local URL structure inspection"
-      );
+  checks.forEach(check => {
+    const item = document.createElement("div");
+    item.className = "finding";
 
-      report.findings.forEach(message => {
-        addReportItem("FINDING", message);
-      });
+    const name = document.createElement("strong");
+    name.textContent = safeText(check.name, "Unnamed check");
 
-    }
+    const status = document.createElement("span");
+    status.className = "finding-label";
+    status.textContent = safeText(check.status, "unknown").toUpperCase();
 
-    addReportItem(
-      "VERIFICATION STATUS",
-      "Live reputation and threat database verification NOT performed."
-    );
+    const detail = document.createElement("div");
+    detail.textContent = safeText(check.detail);
 
-    lastReport =
-      "SHAHEEN TRUSTCHECK - ANALYSIS REPORT\n\n" +
-      "Input: " + raw + "\n\n" +
-      "Findings:\n" +
-      report.findings.map(x => "- " + x).join("\n") +
-      "\n\nLive threat verification: NOT PERFORMED.";
+    const source = document.createElement("small");
+    source.textContent =
+      "SOURCE: " + safeText(check.source, TEXT.sourceUnavailable) +
+      " | CHECKED: " + formatDate(check.checkedAt, language);
 
-    results.style.display = "block";
+    item.append(status, name, detail, source);
+    checksList.appendChild(item);
+  });
 
-    results.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+  const findingsList = document.getElementById("findingsList");
+  findingsList.replaceChildren();
+
+  if (!findings.length) {
+    findingsList.appendChild(makeCard("FINDINGS", TEXT.noFindings, true));
+  }
+
+  findings.forEach(finding => {
+    const item = document.createElement("div");
+    item.className = "finding";
+
+    const severity = document.createElement("span");
+    severity.className = "finding-label";
+    severity.textContent = safeText(finding.severity, "info").toUpperCase();
+
+    const title = document.createElement("strong");
+    title.textContent = safeText(finding.title, "Finding");
+
+    const detail = document.createElement("p");
+    detail.textContent = safeText(finding.detail);
+
+    const evidence = document.createElement("small");
+    evidence.textContent = "EVIDENCE: " + safeText(finding.evidence);
+
+    const source = document.createElement("small");
+    source.textContent =
+      "SOURCE: " + safeText(finding.source, TEXT.sourceUnavailable) +
+      " | TIME: " + formatDate(finding.checkedAt, language);
+
+    item.append(severity, title, detail, evidence, source);
+    findingsList.appendChild(item);
+  });
+
+  const domainEntries = [
+    ["Registrar", website.registrar],
+    ["Registered", website.registeredAt],
+    ["Expiry", website.expiresAt],
+    ["Country", website.country],
+    ["IP addresses", website.ipAddresses],
+    ["Nameservers", website.nameservers],
+    ["DNS records", website.dnsRecords]
+  ];
+
+  renderGrid("domainGrid", domainEntries);
+
+  const tls = website.tls || {};
+  const http = website.http || {};
+
+  renderGrid("connectionGrid", [
+    ["HTTP status", http.status],
+    ["Final URL", http.finalUrl],
+    ["Server header", http.server],
+    ["TLS version", tls.version],
+    ["TLS issuer", tls.issuer],
+    ["TLS valid until", tls.validTo],
+    ["TLS status", tls.status]
+  ]);
+
+  renderGrid("redirectGrid", [
+    ["Redirect chain", website.redirects],
+    ["Detected technologies", website.technologies]
+  ]);
+
+  latestReportText = JSON.stringify(data, null, 2);
+
+  reportElement.style.display = "block";
+  reportElement.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+async function runScan(url, language) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 25000);
+
+  try {
+    const response = await fetch(API_ENDPOINT, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        url: url.href,
+        language: language
+      }),
+      signal: controller.signal
     });
 
+    if (!response.ok) {
+      throw new Error("Analysis service returned HTTP " + response.status);
+    }
+
+    const data = await response.json();
+
+    if (!data || data.ok === false) {
+      throw new Error("Analysis service did not return a completed report.");
+    }
+
+    if (!data.verdict || !data.target || !Array.isArray(data.findings)) {
+      throw new Error("Analysis service response format is incomplete.");
+    }
+
+    data.mode = "online";
+    return data;
+
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  let parsedUrl;
+
+  try {
+    parsedUrl = normalizeInput(urlInput.value);
   } catch {
+    showStatus(TEXT.invalid);
+    urlInput.focus();
+    return;
+  }
 
-    reportContent.replaceChildren();
+  const language = languageSelect.value || "en";
+  lastLanguage = language;
 
-    addReportItem(
-      "ERROR",
-      "The analysis could not be completed."
+  scanButton.disabled = true;
+  scanButton.textContent = TEXT.loading;
+  showStatus(TEXT.loading);
+  reportElement.style.display = "none";
+
+  try {
+    const data = await runScan(parsedUrl, language);
+
+    renderReport(data);
+    showStatus("ONLINE ANALYSIS COMPLETED. Review the evidence and provider statuses in the report.");
+
+  } catch (error) {
+    const localReport = localInspection(parsedUrl);
+
+    renderReport(localReport);
+
+    showStatus(
+      error.name === "AbortError" ? TEXT.apiError : TEXT.apiUnavailable
     );
 
   } finally {
-
-    checkButton.disabled = false;
-    checkButton.textContent = "CHECK WEBSITE →";
-
+    scanButton.disabled = false;
+    scanButton.textContent =
+      (I18N[language] || I18N.en).scanButton;
   }
-
 });
 
-/* COPY REPORT */
-
-document.getElementById("copyButton")
-.addEventListener("click", async () => {
-
-  if (!lastReport) return;
-
-  const button = document.getElementById("copyButton");
+document.getElementById("copyReport").addEventListener("click", async () => {
+  if (!latestReportText) return;
 
   try {
-
-    await navigator.clipboard.writeText(lastReport);
-
-    button.textContent = "COPIED";
-
-    setTimeout(() => {
-      button.textContent = "COPY REPORT";
-    }, 1500);
-
+    await navigator.clipboard.writeText(latestReportText);
+    showStatus(TEXT.copied);
   } catch {
-
-    button.textContent = "COPY NOT AVAILABLE";
-
+    showStatus(TEXT.copyFailed);
   }
-
 });
 
-/* CLEAR */
+document.getElementById("downloadReport").addEventListener("click", () => {
+  if (!latestReport) return;
 
-document.getElementById("clearButton")
-.addEventListener("click", () => {
+  const file = new Blob(
+    [JSON.stringify(latestReport, null, 2)],
+    { type: "application/json" }
+  );
 
-  input.value = "";
-  reportContent.replaceChildren();
-  results.style.display = "none";
-  lastReport = "";
+  const objectUrl = URL.createObjectURL(file);
+  const anchor = document.createElement("a");
 
-  input.focus();
+  anchor.href = objectUrl;
+  anchor.download = "shaheen-trustcheck-report.json";
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
 
+  URL.revokeObjectURL(objectUrl);
 });
 
+document.getElementById("newScan").addEventListener("click", () => {
+  latestReport = null;
+  latestReportText = "";
+  reportElement.style.display = "none";
+  urlInput.value = "";
+  urlInput.focus();
+  showStatus("");
+  statusLine.style.display = "none";
+});
 </script>
 
 </body>
